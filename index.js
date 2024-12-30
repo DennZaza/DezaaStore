@@ -8,6 +8,8 @@ const {
     Routes 
 } = require('discord.js');
 
+require('dotenv').config();
+
 const fs = require('fs')
 
 const REPS_FILE = './reputation.json'
@@ -46,7 +48,7 @@ const getReputation = (userId) => {
 };
 
 // Token bot dan ID
-const TOKEN = 'MTMyMDYwODg2OTEwMTIxMTc0MA.GjUHU_.Sa_QqqfXbCWEmHmmqY6-C8XDg3VaTGgHjpD6wM';
+const TOKEN = process.env.BOT_TOKEN;
 const CLIENT_ID = '1320608869101211740';
 const GUILD_ID = '1319888976152105010';
 
@@ -736,4 +738,4 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
-client.login(TOKEN);
+client.login(process.env.BOT_TOKEN);
